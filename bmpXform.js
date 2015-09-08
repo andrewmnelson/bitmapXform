@@ -74,8 +74,9 @@ var _closure = function() {
       }
     }();
 
-    if (!imgHeader || imgHeader.fileSize != fileSize)  // don't let's overrun the end of file
+    if (!imgHeader || imgHeader.imgFileSize !== fileSize) { // don't let's overrun the end of file
       return errMsg_fileCorrupt(inFileName + ' header');
+    }
 
     var imgMetaData;
 
